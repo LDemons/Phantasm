@@ -11,8 +11,8 @@
     "preview": "vite preview",
     "package": "npm run build && electron-builder",
     "typecheck": "tsc --noEmit",
-    "rebuild": "./node_modules/.bin/electron-rebuild -f -w better-sqlite3",
-    "postinstall": "./node_modules/.bin/electron-rebuild -f -w better-sqlite3"
+    "rebuild": "electron-rebuild -f -w better-sqlite3",
+    "postinstall": "electron-rebuild -f -w better-sqlite3"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.28.6",

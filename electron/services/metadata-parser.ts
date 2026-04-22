@@ -1,6 +1,5 @@
-import { parseFile } from 'music-metadata'
 import { createHash } from 'crypto'
-import { createReadStream, statSync, mkdirSync, writeFileSync } from 'fs'
+import { statSync, mkdirSync, writeFileSync } from 'fs'
 import { join, basename, extname } from 'path'
 import { app } from 'electron'
 
@@ -25,6 +24,32 @@ const SUPPORTED_EXTENSIONS = new Set([
   '.mp3', '.flac', '.m4a', '.aac', '.ogg', '.wav', '.aiff', '.aif',
 ])
 
+const importMusicMetadata = new Function(
+  'specifier',
+  'return import(specifier)'
+) as (specifier: string) => Promise<{
+  parseFile: (
+    filePath: string,
+    options: { duration: boolean; skipCovers: boolean }
+  ) => Promise<{
+    common: {
+      title?: string
+      artist?: string
+      albumartist?: string
+      album?: string
+      year?: number
+      genre?: string[]
+      bpm?: number
+      track?: { no?: number | null }
+      disk?: { no?: number | null }
+      picture?: { data: Uint8Array; format: string }[]
+    }
+    format: {
+      duration?: number
+    }
+  }>
+}>
+
 export function isSupportedAudio(filePath: string): boolean {
   return SUPPORTED_EXTENSIONS.has(extname(filePath).toLowerCase())
 }
@@ -35,6 +60,7 @@ export async function parseTrack(filePath: string): Promise<ParsedTrack> {
   let metadata
 
   try {
+    const { parseFile } = await importMusicMetadata('music-metadata')
     metadata = await parseFile(filePath, { duration: true, skipCovers: false })
   } catch {
     return buildFallback(filePath, stat.mtimeMs, hash)
