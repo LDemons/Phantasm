@@ -1,5 +1,6 @@
 # Project rules (local only)
 reglas.txt
+CLAUDE.md
 
 # Dependencies
 node_modules/
