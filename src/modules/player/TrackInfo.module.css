@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: hidden;
+}
+
+.titleRow {
+  overflow: hidden;
+}
+
+.title {
+  font-family: var(--font-hero);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-technical);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  transition: color var(--t-normal), text-shadow var(--t-normal);
+}
+
+.titleActive {
+  color: var(--color-phosphor-primary);
+  text-shadow: 0 0 8px var(--color-phosphor-primary);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.artist {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-technical);
+  opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sep {
+  font-size: 10px;
+  color: var(--color-chrome-dark);
+  flex-shrink: 0;
+}
+
+.album {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-technical);
+  opacity: 0.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bpmRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.bpmLabel {
+  font-family: var(--font-display);
+  font-size: 9px;
+  color: var(--color-text-technical);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+}
+
+.bpmValue {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--color-phosphor-amber);
+  text-shadow: 0 0 6px var(--color-phosphor-amber);
+}

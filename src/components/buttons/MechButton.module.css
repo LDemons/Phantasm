@@ -1,0 +1,31 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--color-text-technical);
+  font-family: var(--font-ui);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 12px;
+  white-space: nowrap;
+}
+
+.sm  { height: 28px; font-size: 9px;  min-width: 28px;  border-radius: var(--radius-sm); }
+.md  { height: 36px; font-size: 10px; min-width: 36px;  border-radius: var(--radius-sm); }
+.lg  { height: 44px; font-size: 11px; min-width: 44px;  border-radius: var(--radius-md); }
+
+.active .label {
+  color: var(--color-phosphor-primary);
+  text-shadow: 0 0 6px var(--color-phosphor-primary);
+}
+
+.led {
+  flex-shrink: 0;
+}
+
+.label {
+  color: var(--color-text-technical);
+  transition: color var(--t-normal), text-shadow var(--t-normal);
+}

@@ -1,0 +1,73 @@
+/* === PHOSPHOR TEXT FLICKER (occasional, diegetic) === */
+@keyframes phosphor-flicker {
+  0%   { opacity: 1.00; }
+  92%  { opacity: 1.00; }
+  93%  { opacity: 0.86; }
+  94%  { opacity: 1.00; }
+  95%  { opacity: 0.88; }
+  97%  { opacity: 1.00; }
+  100% { opacity: 1.00; }
+}
+
+/* === CURSOR BLINK (terminal style) === */
+@keyframes cursor-blink {
+  0%, 49%  { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* === LED PULSE (beat sync) === */
+@keyframes led-pulse {
+  0%   { opacity: 1.0; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 1.0; }
+}
+
+/* === SCANLINE DRIFT === */
+@keyframes scanline-drift {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* === SIGNAL STATIC (channel change) === */
+@keyframes signal-static {
+  0%   { filter: none; opacity: 1.0; }
+  33%  { filter: brightness(2) contrast(0); opacity: 0.5; }
+  66%  { filter: none; opacity: 0.7; }
+  100% { filter: none; opacity: 1.0; }
+}
+
+/* === BOOT TEXT APPEAR === */
+@keyframes boot-text-in {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === SLOT RACK ENTRY === */
+@keyframes slot-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === DISC SPIN === */
+@keyframes disc-spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+/* === OSD INDICATOR BLINK === */
+@keyframes osd-blink {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 0.2; }
+}

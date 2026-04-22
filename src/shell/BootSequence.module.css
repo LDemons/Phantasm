@@ -1,0 +1,66 @@
+.container {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--color-bg-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 480px;
+  padding: 32px;
+}
+
+.line {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--color-phosphor-primary);
+  opacity: 0;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  text-shadow: 0 0 8px var(--color-phosphor-primary);
+  white-space: pre;
+}
+
+.spacer {
+  height: 8px;
+}
+
+.ok {
+  color: var(--color-phosphor-green);
+}
+
+.hero {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-shadow:
+    0 0 10px var(--color-phosphor-primary),
+    0 0 20px rgba(77,255,145,0.3);
+}
+
+.cursor {
+  display: inline-block;
+  animation: cursor-blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+.scanLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(77,255,145,0.08) 50%,
+    transparent 100%
+  );
+  transform-origin: top center;
+  pointer-events: none;
+}

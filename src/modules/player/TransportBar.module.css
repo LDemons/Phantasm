@@ -1,0 +1,17 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.icon {
+  font-size: 9px;
+  font-family: var(--font-ui);
+  letter-spacing: 0.05em;
+}
+
+.playIcon {
+  font-size: 14px;
+  line-height: 1;
+}

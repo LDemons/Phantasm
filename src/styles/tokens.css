@@ -1,0 +1,80 @@
+:root {
+  /* === COLORS === */
+  --color-bg-base:        #0A0C0F;
+  --color-panel-body:     #1A1D24;
+  --color-panel-elevated: #22262F;
+  --color-chrome-light:   #8A9BAD;
+  --color-chrome-dark:    #3A4552;
+  --color-phosphor-green: #4DFF91;
+  --color-phosphor-amber: #FFB830;
+  --color-signal-red:     #FF3B30;
+  --color-text-technical: #7AADCC;
+  --color-glass-tint:     rgba(30, 200, 120, 0.08);
+
+  /* Night mode phosphor (toggled via class .night-mode on :root) */
+  --color-phosphor-primary:   var(--color-phosphor-green);
+  --color-phosphor-secondary: var(--color-phosphor-amber);
+
+  /* === TYPOGRAPHY === */
+  --font-display:   'Share Tech Mono', monospace;
+  --font-ui:        'Orbitron', sans-serif;
+  --font-mono:      'IBM Plex Mono', monospace;
+  --font-hero:      'Chakra Petch', sans-serif;
+
+  /* === SPACING === */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* === RADIUS === */
+  --radius-sm:  3px;
+  --radius-md:  6px;
+  --radius-lg:  10px;
+
+  /* === BORDERS === */
+  --border-panel:  1px solid var(--color-chrome-dark);
+  --border-active: 1px solid var(--color-chrome-light);
+
+  /* === SHADOWS === */
+  --shadow-panel:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    inset 0 -1px 0 rgba(0,0,0,0.40),
+    2px 4px 8px rgba(0,0,0,0.60);
+
+  --shadow-button-up:
+    0 4px 0 #111,
+    0 6px 12px rgba(0,0,0,0.50),
+    inset 0 1px 0 rgba(255,255,255,0.12);
+
+  --shadow-button-down:
+    0 1px 0 #111,
+    0 2px 4px rgba(0,0,0,0.40),
+    inset 0 2px 4px rgba(0,0,0,0.30);
+
+  --shadow-display-glow:
+    0 0 6px var(--color-phosphor-primary),
+    0 0 12px rgba(77,255,145,0.25);
+
+  /* === TRANSITIONS === */
+  --t-fast:   80ms ease-in;
+  --t-normal: 200ms ease-out;
+  --t-spring: 120ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* === CRT === */
+  --crt-scanline-opacity: 0.10;
+  --crt-glow-spread:      4px;
+  --crt-chromatic-offset: 0.5px;
+  --crt-warp-factor:      0.015;
+}
+
+:root.night-mode {
+  --color-phosphor-primary:   var(--color-phosphor-amber);
+  --color-phosphor-secondary: var(--color-phosphor-green);
+  --color-bg-base:            #080A0D;
+}

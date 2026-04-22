@@ -1,0 +1,50 @@
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+  pointer-events: none;
+  padding: 8px 12px;
+}
+
+.topLeft {
+  position: absolute;
+  top: 40px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.topRight {
+  position: absolute;
+  top: 40px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.bottomLeft {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+}
+
+.bottomRight {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+}
+
+.indicator {
+  font-family: var(--font-display);
+  font-size: 10px;
+  color: var(--color-text-technical);
+  letter-spacing: 0.06em;
+  opacity: 0.55;
+}
+
+.blink {
+  animation: osd-blink 2s ease-in-out infinite;
+}
